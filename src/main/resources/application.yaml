@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: chat-now
+  ai:
+    model:
+      chat: azure-openai #Para desabilitar, spring.ai.model.chat=none (ou qualquer valor que não corresponda a azure-openai)
+    azure:
+      openai:
+        api-key: ${AZURE_OPENAI_API_KEY}
+        endpoint: ${AZURE_OPENAI_ENDPOINT}
+        chat:
+          options:
+            deployment-name: gpt-4.1-mini
+            temperature: 0.7 #A temperatura de amostragem a ser usada controla a criatividade aparente das conclusões geradas. Valores mais altos tornarão a saída mais aleatória, enquanto valores mais baixos tornarão os resultados mais focados e determinísticos. Não é recomendado modificar a temperatura e o top_p para a mesma solicitação de conclusões, pois a interação dessas duas configurações é difícil de prever.
