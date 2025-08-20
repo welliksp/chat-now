@@ -1,30 +1,36 @@
 package br.com.wsp.controller;
 
-import br.com.wsp.dto.ChatMessage;
-import br.com.wsp.dto.ChatResponse;
-import br.com.wsp.service.AzureOpenAIService;
+import br.com.wsp.dto.ChatRequest;
+import br.com.wsp.service.AIService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/chat")
 public class AiController {
 
-    private final AzureOpenAIService service;
+    private final AIService service;
 
-    public AiController(AzureOpenAIService service) {
+    public AiController(AIService service) {
         this.service = service;
     }
 
 
-    @PostMapping("/chat")
-    public ResponseEntity<ChatResponse> chat(@RequestBody ChatMessage request) {
+    @PostMapping("/chatClient")
+    public ResponseEntity<String> chat(@RequestParam ChatRequest request) {
 
-        ChatResponse chat = service.chat(request);
+        return ResponseEntity.ok(service.chat(request));
+    }
 
-        return ResponseEntity.ok(chat);
+    @PostMapping("/promptTemplate")
+    public ResponseEntity<String> promptTemplate(@RequestBody ChatRequest request) {
+
+        return ResponseEntity.ok(service.promptTemplate(request));
+    }
+
+    @PostMapping("/prompt")
+    public ResponseEntity<?> prompt(@RequestBody ChatRequest request) {
+
+        return ResponseEntity.ok(service.prompt(request));
     }
 }
