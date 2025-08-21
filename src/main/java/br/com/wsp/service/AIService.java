@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AIService {
 
-    private ChatClient chatClient;
+    private final ChatClient chatClient;
 
     public AIService(ChatClient.Builder chatClient) {
         this.chatClient = chatClient.build();
@@ -41,17 +41,13 @@ public class AIService {
 
     public ChatResponse prompt(ChatRequest message) {
 
-        Prompt promptTemplate = new Prompt(message.userInput());
-        return chatClient.prompt(promptTemplate).call().chatResponse();
-    }
-
-
-    public br.com.wsp.dto.AudioTranscription transcribeAudio(byte[] audio, String fileName) {
-        return null;
+        Prompt prompt = new Prompt(message.userInput());
+        return chatClient.prompt(prompt).call().chatResponse();
     }
 
 
     public ImageGeneration generateImage(String prompt, String size, int n) {
+
         return null;
     }
 }
