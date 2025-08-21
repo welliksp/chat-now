@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "created": 1755798741,
+    "empty": true,
+    "rawMap": {}
+  },
+  "result": {
+    "metadata": {
+      "revisedPrompt": "A photorealistic image of a black Persian cat. The cat is sitting elegantly on a luxurious chair in a cozy living room, featuring intricate furniture and warm lighting. Its long fur is meticulously groomed, and its large expressive eyes have a golden hue. The room is adorned with soft cushions and decorative plants, creating a warm and inviting atmosphere."
+    },
+    "output": {
+      "url": "https://dalleproduse.blob.core.windows.net/private/images/0abb34ee-3874-4006-83ab-6d2cd91bbafa/generated_00.png?se=2025-08-22T17%3A52%3A31Z&sig=FrWYE8mm8EdfMVc08jGoIaMpDJmbjkL2km7OPNOWOdk%3D&ske=2025-08-25T07%3A58%3A55Z&skoid=09ba021e-c417-441c-b203-c81e5dcd7b7f&sks=b&skt=2025-08-18T07%3A58%3A55Z&sktid=33e01921-4d64-4f8c-a055-5bdaffd5e33d&skv=2020-10-02&sp=r&spr=https&sr=b&sv=2020-10-02",
+      "b64Json": null
+    }
+  },
+  "results": [
+    {
+      "metadata": {
+        "revisedPrompt": "A photorealistic image of a black Persian cat. The cat is sitting elegantly on a luxurious chair in a cozy living room, featuring intricate furniture and warm lighting. Its long fur is meticulously groomed, and its large expressive eyes have a golden hue. The room is adorned with soft cushions and decorative plants, creating a warm and inviting atmosphere."
+      },
+      "output": {
+        "url": "https://dalleproduse.blob.core.windows.net/private/images/0abb34ee-3874-4006-83ab-6d2cd91bbafa/generated_00.png?se=2025-08-22T17%3A52%3A31Z&sig=FrWYE8mm8EdfMVc08jGoIaMpDJmbjkL2km7OPNOWOdk%3D&ske=2025-08-25T07%3A58%3A55Z&skoid=09ba021e-c417-441c-b203-c81e5dcd7b7f&sks=b&skt=2025-08-18T07%3A58%3A55Z&sktid=33e01921-4d64-4f8c-a055-5bdaffd5e33d&skv=2020-10-02&sp=r&spr=https&sr=b&sv=2020-10-02",
+        "b64Json": null
+      }
+    }
+  ]
+}
