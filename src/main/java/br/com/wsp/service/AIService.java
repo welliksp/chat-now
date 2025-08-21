@@ -5,19 +5,25 @@ import br.com.wsp.dto.ChatRequest;
 import br.com.wsp.dto.ImageGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.ai.azure.openai.AzureOpenAiImageModel;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.chat.prompt.PromptTemplate;
+import org.springframework.ai.image.ImagePrompt;
+import org.springframework.ai.image.ImageResponse;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AIService {
 
     private final ChatClient chatClient;
+    private  final AzureOpenAiImageModel azureOpenAiImageModel;
 
-    public AIService(ChatClient.Builder chatClient) {
+
+    public AIService(ChatClient.Builder chatClient, AzureOpenAiImageModel azureOpenAiImageModel) {
         this.chatClient = chatClient.build();
+        this.azureOpenAiImageModel = azureOpenAiImageModel;
     }
 
     public String chat(ChatRequest request) {
@@ -46,8 +52,10 @@ public class AIService {
     }
 
 
-    public ImageGeneration generateImage(String prompt, String size, int n) {
+    public String generateImage(String prompt) {
 
-        return null;
+        ImageResponse response = azureOpenAiImageModel.call(
+                new ImagePrompt(prompt));
+        return response.getResult().getOutput().getUrl();
     }
 }

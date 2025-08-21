@@ -33,4 +33,10 @@ public class AiController {
 
         return ResponseEntity.ok(service.prompt(request));
     }
+
+    @PostMapping("/image")
+    public ResponseEntity<?> generateImage(@RequestBody ChatRequest request) {
+
+        return ResponseEntity.ok(service.generateImage(request.userInput()));
+    }
 }

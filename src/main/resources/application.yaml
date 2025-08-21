@@ -16,6 +16,10 @@ spring:
       openai:
         api-key: ${AZURE_OPENAI_API_KEY}
         endpoint: ${AZURE_OPENAI_ENDPOINT}
+        image:
+          options:
+            deployment-name: dall-e-3
+            size: 512x512
         chat:
           options:
             deployment-name: gpt-4.1-mini
